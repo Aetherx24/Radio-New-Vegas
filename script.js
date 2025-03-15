@@ -17,10 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    volumeSlider.addEventListener('input', (e) => {
-        audio.volume = e.target.value / 100;
-    });
+    const volumeControl = document.querySelector('input[type="range"]');
+    volumeControl.min = 0;
+    volumeControl.max = 1;
+    volumeControl.step = 0.1;
 
+    volumeControl.addEventListener('input', function() {
+        audioElement.volume = this.value;
+    });
     // Set initial volume
     audio.volume = volumeSlider.value / 50;
 });
