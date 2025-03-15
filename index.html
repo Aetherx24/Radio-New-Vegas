@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio New Vegas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="radio-container">
+        <div class="radio-header">
+            <h1>Radio New Vegas</h1>
+            <div class="radio-status">ON AIR</div>
+        </div>
+
+        <div class="radio-player">
+            <div class="radio-display">
+                <p class="now-playing">Now Playing: Classic Hits</p>
+            </div>
+
+            <div class="controls">
+                <button id="playButton" class="play-button">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon hidden">⏸</span>
+                </button>
+                <div class="volume-control">
+                    <input type="range" id="volumeSlider" min="0" max="100" value="80">
+                </div>
+            </div>
+            <audio id="radioStream" src="Asset/Fallout New Vegas  - Mojave Radio with Mr. New Vegas.mp3"></audio>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
