@@ -1,30 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('radioStream');
+    const audioElement = document.getElementById('radioStream');
     const playButton = document.getElementById('playButton');
     const volumeSlider = document.getElementById('volumeSlider');
     const playIcon = document.querySelector('.play-icon');
     const pauseIcon = document.querySelector('.pause-icon');
 
     playButton.addEventListener('click', () => {
-        if (audio.paused) {
-            audio.play();
+        if (audioElement.paused) {
+            audioElement.play();
             playIcon.classList.add('hidden');
             pauseIcon.classList.remove('hidden');
         } else {
-            audio.pause();
+            audioElement.pause();
             playIcon.classList.remove('hidden');
             pauseIcon.classList.add('hidden');
         }
     });
 
-    const volumeControl = document.querySelector('input[type="range"]');
-    volumeControl.min = 0;
-    volumeControl.max = 1;
-    volumeControl.step = 0.1;
+    volumeSlider.min = 0;
+    volumeSlider.max = 100;
+    volumeSlider.step = 1;
+    volumeSlider.value = 50;
 
-    volumeControl.addEventListener('input', function() {
-        audioElement.volume = this.value;
+    volumeSlider.addEventListener('input', function() {
+        audioElement.volume = this.value / 100;
     });
-    // Set initial volume
-    audio.volume = volumeSlider.value / 50;
+    // Set initial volume at 50%
+    audioElement.volume = 0.5;
 });
