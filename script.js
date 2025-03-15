@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const playIcon = document.querySelector('.play-icon');
     const pauseIcon = document.querySelector('.pause-icon');
 
+    // Add error handling for audio
+    audioElement.addEventListener('error', (e) => {
+        console.error('Error loading audio:', e);
+    });
+
     playButton.addEventListener('click', () => {
         if (audioElement.paused) {
             audioElement.play();
