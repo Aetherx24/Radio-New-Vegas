@@ -159,23 +159,37 @@ input[type="range"] {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .radio-container {
-        margin: 1rem;
-        padding: 1rem;
+        margin: 0.5rem;
+        padding: 1.5rem;
+        width: 90%;
     }
 
     .radio-header {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .radio-header h1 {
-        font-size: 1.5rem;
-        padding: 10px 20px;
+        font-size: 2rem;
+        padding: 15px 30px;
+        margin: 0 -10px;
+        transform: scale(0.95);
     }
 
     .radio-header h1::before{
-        background-size: 12px 12px;
+        background-size: 13px 13px;
+    }
+
+    .radio-header h1::after {
+        box-shadow: 
+            0 0 15px #ff0000,
+            inset 0 0 15px #ff0000;
+    }
+
+    .radio-status {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 
     .now-playing {
@@ -189,11 +203,31 @@ input[type="range"] {
 }
 
 @media screen and (max-width: 480px) {
+    .radio-container {
+        margin: 0.3rem;
+        padding: 1rem;
+        width: 95%;
+    }
+
    .radio-header h1 {
-        font-size: 1.5rem;
-        padding: 5px;
+        font-size: 1.6rem;
+        padding: 12px 20px;
+        letter-spacing: 2px;
+        transform: scale(0.9);
     }
 
     .radio-header h1::before {
-        background-size: 10px 10px;
+        background-size: 11px 11px;
     }
+
+    .radio-header h1::after {
+        box-shadow:
+            0 0 12px #ff0000,
+            inset 0 0 12px #ff0000;
+    }
+
+    .radio-status {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
